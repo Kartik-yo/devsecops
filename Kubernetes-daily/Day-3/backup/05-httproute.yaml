@@ -1,0 +1,48 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"gateway.networking.k8s.io/v1","kind":"HTTPRoute","metadata":{"annotations":{},"name":"hello","namespace":"default"},"spec":{"parentRefs":[{"name":"prod"}],"rules":[{"backendRefs":[{"name":"hello-svc","port":80}]}]}}
+  creationTimestamp: "2025-12-02T12:57:06Z"
+  generation: 1
+  name: hello
+  namespace: default
+  resourceVersion: "702"
+  uid: af44a600-c5d5-42ab-92c4-33661f768d26
+spec:
+  parentRefs:
+  - group: gateway.networking.k8s.io
+    kind: Gateway
+    name: prod
+  rules:
+  - backendRefs:
+    - group: ""
+      kind: Service
+      name: hello-svc
+      port: 80
+      weight: 1
+    matches:
+    - path:
+        type: PathPrefix
+        value: /
+status:
+  parents:
+  - conditions:
+    - lastTransitionTime: "2025-12-02T12:57:09Z"
+      message: References resolved
+      observedGeneration: 1
+      reason: ResolvedRefs
+      status: "True"
+      type: ResolvedRefs
+    - lastTransitionTime: "2025-12-02T12:57:09Z"
+      message: Accepted HTTPRoute
+      observedGeneration: 1
+      reason: Accepted
+      status: "True"
+      type: Accepted
+    controllerName: projectcontour.io/gateway-controller
+    parentRef:
+      group: gateway.networking.k8s.io
+      kind: Gateway
+      name: prod
