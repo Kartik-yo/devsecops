@@ -126,9 +126,9 @@ status:
 #     metadata:
 #       labels:
 #         app.kubernetes.io/name: cluster-autoscaler
-#       annotations:
-#         prometheus.io/scrape: "true"
-#         prometheus.io/port: "8085"
+#      # annotations:
+#        # prometheus.io/scrape: "true"
+#        # prometheus.io/port: "8085"
 #     spec:
 #       serviceAccountName: cluster-autoscaler
 #       priorityClassName: system-cluster-critical
