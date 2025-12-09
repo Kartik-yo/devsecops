@@ -136,16 +136,16 @@ status:
 #       - name: cluster-autoscaler
 #         image: registry.k8s.io/autoscaling/cluster-autoscaler:v1.32.5
 #         command:
-#         - ./cluster-autoscaler
-#         - --v=4
-#         - --stderrthreshold=info
-#         - --cloud-provider=aws
-#         - --skip-nodes-with-local-storage=false
-#         - --skip-nodes-with-system-pods=false
-#         - --balance-similar-node-groups=true
-#         - --expander=least-waste
-#         - --node-group-auto-discovery=asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/YOUR-CLUSTER-NAME-HERE
-#         - --aws-region=YOUR-REGION-HERE
+              # - ./cluster-autoscaler
+              # - --v=4
+              # - --stderrthreshold=info
+              # - --cloud-provider=aws
+              # - --skip-nodes-with-local-storage=false
+              # - --skip-nodes-with-system-pods=false
+              # - --balance-similar-node-groups=true
+              # - --expander=least-waste
+              # - --node-group-auto-discovery=asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/eks-learning
+              # - --write-status-configmap=true
 #         resources:
 #           requests:
 #             cpu: 100m
